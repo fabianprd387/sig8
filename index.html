@@ -58,7 +58,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[0.44714333097120673,101.37696805591663],[0.545854626690048,101.5706628793891]]);
+        }).fitBounds([[0.4374511342616528,101.34953168369267],[0.5361624299804941,101.54322650716514]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -387,16 +387,92 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_SIGHEILRS_3_0() {
-            return {
+        function style_SIGHEILRS_3_0(feature) {
+            switch(String(feature.properties['Jenis'])) {
+                case 'Pemerintah / Kejiwaan':
+                    return {
                 pane: 'pane_SIGHEILRS_3',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
             iconUrl: 'markers/SIGHEILRS_3.svg',
-            iconSize: [11.400000000000002, 11.400000000000002]
+            iconSize: [14.440000000000001, 14.440000000000001]
         }),
                 interactive: true,
+            }
+                    break;
+                case 'Pemerintah / Umum':
+                    return {
+                pane: 'pane_SIGHEILRS_3',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/SIGHEILRS_3.svg',
+            iconSize: [14.440000000000001, 14.440000000000001]
+        }),
+                interactive: true,
+            }
+                    break;
+                case 'Swasta / Ibu & Anak':
+                    return {
+                pane: 'pane_SIGHEILRS_3',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/SIGHEILRS_3.svg',
+            iconSize: [14.440000000000001, 14.440000000000001]
+        }),
+                interactive: true,
+            }
+                    break;
+                case 'Swasta / Mata':
+                    return {
+                pane: 'pane_SIGHEILRS_3',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/SIGHEILRS_3.svg',
+            iconSize: [14.440000000000001, 14.440000000000001]
+        }),
+                interactive: true,
+            }
+                    break;
+                case 'Swasta / Umum':
+                    return {
+                pane: 'pane_SIGHEILRS_3',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/SIGHEILRS_3.svg',
+            iconSize: [14.440000000000001, 14.440000000000001]
+        }),
+                interactive: true,
+            }
+                    break;
+                case 'Universitas / Umum':
+                    return {
+                pane: 'pane_SIGHEILRS_3',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/SIGHEILRS_3.svg',
+            iconSize: [14.440000000000001, 14.440000000000001]
+        }),
+                interactive: true,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_SIGHEILRS_3',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/SIGHEILRS_3.svg',
+            iconSize: [14.440000000000001, 14.440000000000001]
+        }),
+                interactive: true,
+            }
+                    break;
             }
         }
         map.createPane('pane_SIGHEILRS_3');
@@ -420,7 +496,7 @@
         bounds_group.addLayer(layer_SIGHEILRS_3);
         map.addLayer(layer_SIGHEILRS_3);
         var overlaysTree = [
-            {label: '<img src="legend/SIGHEILRS_3.png" /> SIGHEIL - RS', layer: layer_SIGHEILRS_3},
+            {label: 'SIGHEIL - RS<br /><table><tr><td style="text-align: center;"><img src="legend/SIGHEILRS_3_PemerintahKejiwaan0.png" /></td><td>Pemerintah / Kejiwaan</td></tr><tr><td style="text-align: center;"><img src="legend/SIGHEILRS_3_PemerintahUmum1.png" /></td><td>Pemerintah / Umum</td></tr><tr><td style="text-align: center;"><img src="legend/SIGHEILRS_3_SwastaIbuAnak2.png" /></td><td>Swasta / Ibu & Anak</td></tr><tr><td style="text-align: center;"><img src="legend/SIGHEILRS_3_SwastaMata3.png" /></td><td>Swasta / Mata</td></tr><tr><td style="text-align: center;"><img src="legend/SIGHEILRS_3_SwastaUmum4.png" /></td><td>Swasta / Umum</td></tr><tr><td style="text-align: center;"><img src="legend/SIGHEILRS_3_UniversitasUmum5.png" /></td><td>Universitas / Umum</td></tr><tr><td style="text-align: center;"><img src="legend/SIGHEILRS_3_6.png" /></td><td></td></tr></table>', layer: layer_SIGHEILRS_3},
             {label: '<img src="legend/SIGHEILKlinik_2.png" /> SIGHEIL - Klinik', layer: layer_SIGHEILKlinik_2},
             {label: '<img src="legend/RBI10K_ADMINISTRASI_DESA_20230928ADMINISTRASI_AR_DESAKEL_1.png" /> RBI10K_ADMINISTRASI_DESA_20230928 — ADMINISTRASI_AR_DESAKEL', layer: layer_RBI10K_ADMINISTRASI_DESA_20230928ADMINISTRASI_AR_DESAKEL_1},
             {label: "Satelit Google", layer: layer_SatelitGoogle_0},]
